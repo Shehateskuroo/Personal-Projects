@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Anime Survey</title>
+  <style>
+ body {
+            font-family: 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+            background-image: url("https://c4.wallpaperflare.com/wallpaper/763/361/232/bleach-anime-uzumaki-naruto-gon-cs-rurouni-kennshin-hd-wallpaper-preview.jpg");
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h3 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        form {
+            font-size: 1em;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+        
+  </style>
+</head>
+<body>
+  <form class="container">
+    <h1 class="head">Anime Survey</h1>
+
+    <!-- Age -->
+    <div class="watch-anime">
+      <h3>1. Age</h3>
+      <label><input type="radio" name="age" value="under-13"> Under 13</label><br>
+      <label><input type="radio" name="age" value="13-17"> 13-17</label><br>
+      <label><input type="radio" name="age" value="18-24"> 18-24</label><br>
+      <label><input type="radio" name="age" value="25-34"> 25-34</label><br>
+      <label><input type="radio" name="age" value="35-44"> 35-44</label><br>
+      <label><input type="radio" name="age" value="45-and-above"> 45 and Above</label>
+    </div>
+
+    <!-- Gender -->
+    <div class="watch-anime">
+      <h3>2. Gender</h3>
+      <label><input type="radio" name="gender" value="Male"> Male</label><br>
+      <label><input type="radio" name="gender" value="Female"> Female</label>
+    </div>
+
+    <!-- Location -->
+    <div class="watch-anime">
+      <h3>3. Location</h3>
+      <label>Country: <input type="text" name="Country"></label>
+    </div>
+
+    <!-- How often do you watch anime? -->
+    <div class="watch-anime">
+      <h3>4. How often do you watch anime?</h3>
+      <label><input type="radio" name="watch-anime-frequency" value="Daily"> Daily</label><br>
+      <label><input type="radio" name="watch-anime-frequency" value="Few-Times-a-week"> Few Times a week</label><br>
+      <label><input type="radio" name="watch-anime-frequency" value="Once-a-week"> Once a week</label><br>
+      <label><input type="radio" name="watch-anime-frequency" value="a-few-times-a-month"> A few times a month</label><br>
+      <label><input type="radio" name="watch-anime-frequency" value="Rarely"> Rarely</label><br>
+      <label><input type="radio" name="watch-anime-frequency" value="Never"> Never</label>
+    </div>
+
+    <!-- How long have you been watching anime? -->
+    <div class="watch-anime">
+      <h3>5. How long have you been watching anime?</h3>
+      <label><input type="radio" name="watching-duration" value="less-than-a-year"> Less than a year</label><br>
+      <label><input type="radio" name="watching-duration" value="1-3"> 1-3 years</label><br>
+      <label><input type="radio" name="watching-duration" value="4-6"> 4-6 years</label><br>
+      <label><input type="radio" name="watching-duration" value="7-10"> 7-10 years</label><br>
+      <label><input type="radio" name="watching-duration" value="more-than-10-years"> More than 10 years</label>
+    </div>
+
+    <!-- Where do you usually watch anime? -->
+    <div class="watch-anime">
+      <h3>6. Where do you usually watch anime? (Select all that apply)</h3>
+      <label><input type="radio" name="watching-platform" value="services"> Streaming services (e.g., Crunchyroll, Netflix)</label><br>
+      <label><input type="radio" name="watching-platform" value="tv"> TV</label><br>
+      <label><input type="radio" name="watching-platform" value="DVD"> DVD/Blu-ray</label><br>
+      <label><input type="radio" name="watching-platform" value="Downloaded"> Downloaded files</label><br>
+      <label>Other: <input type="text" name="Other"></label>
+    </div>
+
+    <!-- How do you prefer to watch anime? -->
+    <div class="watch-anime">
+      <h3>7. How do you prefer to watch anime?</h3>
+      <label><input type="radio" name="preference" value="Subbed"> Subbed (Original Japanese with subtitles)</label><br>
+      <label><input type="radio" name="preference" value="Dubbed"> Dubbed (English or other languages)</label><br>
+      <label><input type="radio" name="preference" value="Both"> Both Subbed and Dubbed</label>
+    </div>
+
+    <!-- What is your favorite anime genre? -->
+    <div class="watch-anime">
+      <h3>8. What is your favorite anime genre? (Select all that apply)</h3>
+      <label><input type="radio" name="genre" value="Action"> Action</label><br>
+      <label><input type="radio" name="genre" value="Adventure"> Adventure</label><br>
+      <label><input type="radio" name="genre" value="Comedy"> Comedy</label><br>
+      <label><input type="radio" name="genre" value="Drama"> Drama</label><br>
+      <label><input type="radio" name="genre" value="Fantasy"> Fantasy</label><br>
+      <label><input type="radio" name="genre" value="Horror"> Horror</label><br>
+      <label><input type="radio" name="genre" value="Romance"> Romance</label><br>
+      <label><input type="radio" name="genre" value="Sci-Fi"> Sci-Fi</label><br>
+      <label><input type="radio" name="genre" value="Slice-of-Life"> Slice of Life</label><br>
+      <label><input type="radio" name="genre" value="Sports"> Sports</label><br>
+      <label><input type="radio" name="genre" value="Mystery"> Mystery</label><br>
+      <label><input type="radio" name="genre" value="Mecha"> Mecha</label><br>
+      <label>Other: <input type="text" name="Other"></label>
+    </div>
+
+    <!-- What is your favorite anime of all time? -->
+    <div class="watch-anime">
+      <h3>9. What is your favorite anime of all time?</h3>
+      <label><input type="text" name="favorite"></label>
+    </div>
+
+    <!-- How many anime series have you watched in the last year? -->
+    <div class="watch-anime">
+      <h3>10. How many anime series have you watched in the last year?</h3>
+      <label><input type="radio" name="anime-count" value="1-5"> 1-5</label><br>
+      <label><input type="radio" name="anime-count" value="6-10"> 6-10</label><br>
+      <label><input type="radio" name="anime-count" value="11-20"> 11-20</label><br>
+      <label><input type="radio" name="anime-count" value="21-30"> 21-30</label><br>
+      <label><input type="radio" name="anime-count" value="more-than-30"> More than 30</label>
+    </div>
+
+    <!-- Do you participate in anime-related activities? -->
+    <div class="watch-anime">
+      <h3>11. Do you participate in anime-related activities? (Select all that apply)</h3>
+      <label><input type="radio" name="activities" value="Attending"> Attending anime conventions</label><br>
+      <label><input type="radio" name="activities" value="Cosplaying"> Cosplaying</label><br>
+      <label><input type="radio" name="activities" value="Collecting"> Collecting anime merchandise</label><br>
+      <label><input type="radio" name="activities" value="Creating"> Creating fan art/fan fiction</label><br>
+      <label><input type="radio" name="activities" value="Watching-YouTubers"> Watching anime YouTubers</label><br>
+      <label><input type="radio" name="activities" value="Discussing"> Discussing anime online (forums, social media)</label><br>
+      <label>Other: <input type="text" name="Other"></label>
+    </div>
+
+    <!-- Which anime streaming service do you use the most? -->
+    <div class="watch-anime">
+      <h3>12. Which anime streaming service do you use the most?</h3>
+      <label><input type="radio" name="streaming-service" value="Crunchyroll"> Crunchyroll</label><br>
+      <label><input type="radio" name="streaming-service" value="Funimation"> Funimation</label><br>
+      <label><input type="radio" name="streaming-service" value="Netflix"> Netflix</label><br>
+      <label><input type="radio" name="streaming-service" value="Hulu"> Hulu</label><br>
+      <label><input type="radio" name="streaming-service" value="Amazon"> Amazon Prime Video</label><br>
+      <label>Other: <input type="text" name="Other"></label>
+    </div>
+
+    <!-- Do you discuss anime with others? -->
+    <div class="watch-anime">
+      <h3>13. Do you discuss anime with others?</h3>
+      <label><input type="radio" name="discussion" value="Yes-online"> Yes, online (forums, social media)</label><br>
+      <label><input type="radio" name="discussion" value="Yes-friends"> Yes, in person with friends/family</label><br>
+      <label><input type="radio" name="discussion" value="No"> No</label>
+    </div>
+
+    <!-- Do you watch anime alone or with others? -->
+    <div class="watch-anime">
+      <h3>14. Do you watch anime alone or with others?</h3>
+      <label><input type="radio" name="watching-preference" value="Alone"> Alone</label><br>
+      <label><input type="radio" name="watching-preference" value="With-friends"> With friends</label><br>
+      <label><input type="radio" name="watching-preference" value="With-family"> With family</label><br>
+      <label>Other: <input type="text" name="Other"></label>
+    </div>
+
+    <!-- Are you a member of any anime clubs or communities? -->
+    <div class="watch-anime">
+      <h3>15. Are you a member of any anime clubs or communities?</h3>
+      <label><input type="radio" name="club-membership" value="Yes"> Yes</label><br>
+      <label><input type="radio" name="club-membership" value="No"> No</label>
+    </div>
+
+    <!-- How do you decide which anime to watch? -->
+    <div class="watch-anime">
+      <h3>16. How do you decide which anime to watch? (Select all that apply)</h3>
+      <label><input type="radio" name="decision-method" value="Recommendations"> Recommendations from friends</label><br>
+      <label><input type="radio" name="decision-method" value="Online-reviews"> Online reviews</label><br>
+      <label><input type="radio" name="decision-method" value="Social-media-trends"> Social media trends</label><br>
+      <label><input type="radio" name="decision-method" value="Personal-preference"> Personal preference</label><br>
+      <label><input type="radio" name="decision-method" value="Random-selection"> Random selection</label><br>
+      <label>Other: <input type="text" name="Other"></label>
+    </div>
+
+    <!-- Do you prefer seasonal anime or long-running series? -->
+    <div class="watch-anime">
+      <h3>17. Do you prefer seasonal anime or long-running series?</h3>
+      <label><input type="radio" name="series-preference" value="Seasonal"> Seasonal (12-24 episodes)</label><br>
+      <label><input type="radio" name="series-preference" value="Long-running"> Long-running series (100+ episodes)</label><br>
+      <label><input type="radio" name="series-preference" value="No-preference"> No preference</label>
+    </div>
+
+    <!-- How important is the art style in your enjoyment of anime? -->
+    <div class="watch-anime">
+      <h3>18. How important is the art style in your enjoyment of anime?</h3>
+      <label><input type="radio" name="art-style-importance" value="Very-important"> Very important</label><br>
+      <label><input type="radio" name="art-style-importance" value="Somewhat-important"> Somewhat important</label><br>
+      <label><input type="radio" name="art-style-importance" value="Neutral"> Neutral</label><br>
+      <label><input type="radio" name="art-style-importance" value="Not-very-important"> Not very important</label><br>
+      <label><input type="radio" name="art-style-importance" value="Not-important"> Not important at all</label>
+    </div>
+
+    <!-- What improvements would you like to see in the anime industry? -->
+    <div class="watch-anime">
+      <h3>19. What improvements would you like to see in the anime industry?</h3>
+      <label><input type="text" name="improvements"></label>
+    </div>
+
+    <!-- Is there anything else you'd like to share about your anime preferences? -->
+    <div class="watch-anime">
+      <h3>20. Is there anything else you'd like to share about your anime preferences?</h3>
+      <label><input type="text" name="additional-comments"></label>
+    </div>
+
+    <button class="glow-on-hover" type="button">Submit</button>
+
+  </form>
+</body>
+</html>
