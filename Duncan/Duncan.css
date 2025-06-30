@@ -1,0 +1,21 @@
+
+
+body { margin:0; font-family: Arial, sans-serif; background:#121212; color:#eee; }
+header{padding:20px;background:#1e1e1e;} h1{margin:0;color:#f5c518;}
+main{display:flex; flex-wrap:wrap; gap:20px; padding:20px;}
+.card, .bet-slip { background:#1e1e1e; border-radius:16px; padding:15px; flex:1; min-width:300px; }
+.card-grid{display:grid; grid-template-columns:1fr 1fr; gap:15px;}
+.game-card{padding:15px;background:#262626; border-radius:16px; opacity:0; transform: translateY(20px); animation: fadeInUp 0.5s forwards;}
+.game-card h3{margin:0 0 5px;}
+.odds button{margin:5px; padding:8px 12px; background:#333; border:none; color:#eee; cursor:pointer; border-radius:8px; transition: all 0.3s;}
+.odds button:hover{background:#f5c518; color:#000;}
+input[type="number"]{width:80px;padding:5px;margin-top:5px; border-radius:8px; border:none;}
+.bet-item{border-bottom:1px solid #444; padding:10px 0; opacity:0; transform: translateX(20px); animation: fadeInRight 0.5s forwards;}
+.bet-item:last-child{border:none;}
+.total{font-size:1.1em;margin-top:10px;}
+@keyframes fadeInUp {
+  to { opacity:1; transform: translateY(0); }
+}
+@keyframes fadeInRight {
+  to { opacity:1; transform: translateX(0); }
+}
